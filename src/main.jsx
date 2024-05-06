@@ -7,7 +7,7 @@ import Root from './routes/root'
 const router = createBrowserRouter([
   {
     path:'/',
-    element:<Root></Root>
+    element:<Root></Root>,
   },
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
