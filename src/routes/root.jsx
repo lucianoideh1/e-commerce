@@ -1,22 +1,16 @@
 export default function Root(){
     return(
-        <div className="container min-h-full flex flex">
-            <div id='sidebar' 
-            className="border-2 border-solid border-slate-950
-            text-3xl font-black w-80 min-h-full flex flex-col align-center p-5 text-white bg-gray-950">
-                <h1 className="pb-5">title</h1>
-                <ul>
-                    <li><a href="#">test</a></li>
-                    <li><a href="#">test</a></li>
-                    <li><a href="#">test</a></li>
-                    <li><a href="#">test</a></li>
-                    <li><a href="#">test</a></li>
+        <div id='index-site' className="w-screen">
+            <div id='nav-bar'className="flex gap-6 items-center justify-center w-full p-2 bg-slate-200	 ">
+                <h1 className="text-2xl text-gray-900 font-extrabold">title</h1>
+                <ul className="flex gap-1 text-l">
+                    <li className="p-1">about</li>
+                    <li className="p-1">shop</li>
+                    <li className="p-1">categories</li>
+                    <li className="p-1">cart</li>
                 </ul>
             </div>
-            <div id='details' className="max-w-full p-5">
-                <h2>Details</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, iste quos. Minus cupiditate blanditiis quibusdam et sit? Iste, esse odio!</p>
-            </div>
+        <div className="details"></div>
         </div>
     )
 }
