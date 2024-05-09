@@ -1,6 +1,24 @@
+import { useEffect } from "react";
 import { Outlet,Link } from "react-router-dom";
+// import { useGetData } from '../useGetData'
+
+// export async function loader() {
+//     const items = await useGetData();
+//     return { items }
+// }
+
 
 export default function Root(){
+
+    useEffect(() => {
+        function getThing() {
+            fetch('https://fakestoreapi.com/products')
+            .then(res => res.json())
+            .then(data => console.log(data))
+        }
+        getThing()
+    },[])
+
     return(
         <div id='index-site' className="w-screen">
             <div id='nav-bar'className="flex gap-6 items-center justify-center w-full p-2 bg-gray-200	border-b-2 border-gray-400">
