@@ -1,3 +1,5 @@
+import { Outlet } from "react-router-dom";
+
 export default function Root(){
     return(
         <div id='index-site' className="w-screen">
@@ -9,8 +11,14 @@ export default function Root(){
                     <li className="p-1"><a href="categories">categories</a></li>
                     <li className="p-1"><a href="cart">cart</a></li>
                 </ul>
+                <ul>
+                    <li><a href="/item/1">Item 1</a></li>
+                    <li><a href="/item/2">Item 2</a></li>
+                </ul>
             </div>
-        <div className="details"></div>
+        <div className="details">
+            <Outlet></Outlet>
+        </div>
         </div>
     )
 }
