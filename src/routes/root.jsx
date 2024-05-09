@@ -3,9 +3,10 @@ import { Outlet } from "react-router-dom";
 export default function Root(){
     return(
         <div id='index-site' className="w-screen">
-            <div id='nav-bar'className="flex gap-6 items-center justify-center w-full p-2 bg-slate-200	 ">
+            <div id='nav-bar'className="flex gap-6 items-center justify-center w-full p-2 bg-gray-200	border-b-2 border-gray-400">
                 <h1 className="text-2xl text-gray-900 font-extrabold">title</h1>
                 <ul className="flex gap-1 text-l font-medium">
+                    <li className="p-1"> <a href="/">home</a></li>
                     <li className="p-1"> <a href="about">about</a></li>
                     <li className="p-1"><a href="shop">shop</a></li>
                     <li className="p-1"><a href="categories">categories</a></li>
