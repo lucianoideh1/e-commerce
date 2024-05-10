@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Outlet,Link } from "react-router-dom";
 // import { useGetData } from '../useGetData'
 
@@ -10,14 +9,6 @@ import { Outlet,Link } from "react-router-dom";
 
 export default function Root(){
 
-    useEffect(() => {
-        function getThing() {
-            fetch('https://fakestoreapi.com/products')
-            .then(res => res.json())
-            .then(data => console.log(data))
-        }
-        getThing()
-    },[])
 
     return(
         <div id='index-site' className="w-screen">
@@ -32,7 +23,7 @@ export default function Root(){
                 </ul>
                 <ul>
                     <li><Link to={"/item/1"}>Item 1</Link></li>
-                    <li><Link to={"/item/2"}>Item 2</Link></li>
+                    <li><Link to={"/item2"}>Item 2</Link></li>
                 </ul>
             </div>
         <div className="details">

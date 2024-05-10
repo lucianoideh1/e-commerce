@@ -5,6 +5,7 @@ import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Root from './routes/root'
 import ErrorPage from './error-page'
 import Item from './routes/item'
+import ItemTwo from './routes/itemTwo'
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,11 @@ const router = createBrowserRouter([
       {
         path:'item/:itemId',
         element:<Item></Item>
-      }
+      },
+     {
+      path:'/item2',
+      element:<ItemTwo></ItemTwo>
+     }
     ],
   },
 ])
