@@ -1,37 +1,57 @@
 import { useEffect,useState } from "react";
 
-export default function ItemTwo(){
-    const item = {
-        title : 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-        category: "men's clothing",
-        price: 109.95,
-        image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-        rating: 3.9,
-        count: 120,
-        id:1
-    }
-
+function useData(){
+    const [state, setState] = useState([])
+    const [error, setError] =  useState(null)
+    const [loading, setLoading] = useState(true)   
     
-    useEffect(() => {
-        function getThing() {
-            fetch('https://fakestoreapi.com/products')
-            .then(res => res.json())
-            .then(data => console.log(data))
-        }
-        getThing()
+    // useEffect(()=>{
+    //     function getThing() {
+    //         fetch('https://fakestoreapi.com/products')
+    //         .then(res => res.json())
+    //         .then(data => console.log(data))
+    //     }
+    //     getThing()
+    // },[])
+
+    useEffect(()=>{
+        fetch("https://fakestoreapi.com/products")
+        .then((response) => {
+          if (response.status >= 400) {
+            throw new Error("server error");
+          }
+          return response.json();
+        })
+        .then(res => console.log(res))
+        .then((response) => setState(response))
+        .catch((error) => setError(error))
+        .finally(() => setLoading(false));
     },[])
+    return { state,error,loading}
+}
 
-    const [state,setState] = useState([])
-    const [error,setError] =  useState(null)
-    const [loading,setLoading] = useState(true)    
+export default function ItemTwo(){
+    // const item = {
+    //     title : 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
+    //     category: "men's clothing",
+    //     price: 109.95,
+    //     image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    //     rating: 3.9,
+    //     count: 120,
+    //     id:1
+    // }
 
+     const data = useData()
     return(
-        <div id="item" className="p-2 bg-slate-200 border-2 border-gray-500 m-2 max-w-48">
-            <p className="font-bold text-xl">{item.title}</p>
-            <p className="text-gray-500 text-base">{item.category}</p>
-            <p className="font-medium text-lg">${item.price}</p>
-            <p><span>rating ({item.rating}/5) - {item.count}</span></p>
-            <img src={item.image} alt="item" />
+        // <div id="item" className="p-2 bg-slate-200 border-2 border-gray-500 m-2 max-w-48">
+        //     <p className="font-bold text-xl">{item.title}</p>
+        //     <p className="text-gray-500 text-base">{item.category}</p>
+        //     <p className="font-medium text-lg">${item.price}</p>
+        //     <p><span>rating ({item.rating}/5) - {item.count}</span></p>
+        //     <img src={item.image} alt="item" />
+        // </div>
+        <div>
+            <h1>Data</h1>
         </div>
     )
 }
