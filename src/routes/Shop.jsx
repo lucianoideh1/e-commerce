@@ -1,13 +1,13 @@
 import  { useLoaderData } from "react-router-dom";
 
 // itemTwoLoader
-export const itemTwoLoader = async () => {
+export const ShopLoader = async () => {
     const res = await fetch("https://fakestoreapi.com/products")
     return res.json()
 }
 
 
-export default function ItemTwo(){
+export default function Shop(){
 const items = useLoaderData()
 
 return(

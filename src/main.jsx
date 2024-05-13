@@ -4,8 +4,7 @@ import './index.css'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Root from './routes/root'
 import ErrorPage from './error-page'
-import Item from './routes/item'
-import ItemTwo, {itemTwoLoader} from './routes/itemTwo'
+import Shop, {ShopLoader} from './routes/Shop'
 
 const router = createBrowserRouter([
   {
@@ -13,14 +12,10 @@ const router = createBrowserRouter([
     element:<Root></Root>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
-      {
-        path:'item/:itemId',
-        element:<Item></Item>
-      },
      {
-      path:'/item2',
-      element:<ItemTwo></ItemTwo>,
-      loader:itemTwoLoader,
+      path:'/shop',
+      element:<Shop></Shop>,
+      loader:ShopLoader,
      }
     ],
   },

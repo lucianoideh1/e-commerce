@@ -1,4 +1,4 @@
-import { Outlet,Link,} from "react-router-dom";
+import { Outlet,Link} from "react-router-dom";
 
 
 export default function Root(){
@@ -10,13 +10,9 @@ export default function Root(){
                 <ul className="flex gap-1 text-l font-medium">
                     <li className="p-1"> <Link to={"/"}>home</Link></li>
                     <li className="p-1"> <Link to={"about"}>about</Link></li>
-                    <li className="p-1"><Link to={"shop"}>shop</Link></li>
+                    <li className="p-1"><Link to={"/shop"}>shop</Link></li>
                     <li className="p-1"><Link to={"categories"}>categories</Link></li>
                     <li className="p-1"><Link to={"cart"}>cart</Link></li>
-                </ul>
-                <ul>
-                    <li><Link to={"/item/1"}>Item 1</Link></li>
-                    <li><Link to={"/item2"}>Item 2</Link></li>
                 </ul>
             </div>
         <div className="details">
