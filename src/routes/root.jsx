@@ -1,15 +1,7 @@
-import { Outlet,Link,useLoaderData } from "react-router-dom";
-
-
-
-// export async function loader() {
-//     const items = useGetData();
-//     return { items }
-// }
+import { Outlet,Link,} from "react-router-dom";
 
 
 export default function Root(){
-// const { data } = useGetData() 
 
     return(
         <div id='index-site' className="w-screen">

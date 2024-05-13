@@ -1,25 +1,36 @@
+import  { useLoaderData } from "react-router-dom";
+
+// itemTwoLoader
+export const itemTwoLoader = async () => {
+    const res = await fetch("https://fakestoreapi.com/products")
+    return res.json()
+}
+
+export async function loader() {
+    const items = itemTwoLoader();
+    return { items }
+}
+
+
 export default function ItemTwo(){
-    // const item = {
-    //     title : 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-    //     category: "men's clothing",
-    //     price: 109.95,
-    //     image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    //     rating: 3.9,
-    //     count: 120,
-    //     id:1
-    // }
-        return(
-            <div>
-            <h1>Data</h1>
-        </div>
-        )
-   
-        // <div id="item" className="p-2 bg-slate-200 border-2 border-gray-500 m-2 max-w-48">
-        //     <p className="font-bold text-xl">{item.title}</p>
-        //     <p className="text-gray-500 text-base">{item.category}</p>
-        //     <p className="font-medium text-lg">${item.price}</p>
-        //     <p><span>rating ({item.rating}/5) - {item.count}</span></p>
-        //     <img src={item.image} alt="item" />
-        // </div>
-      
+const items = useLoaderData()
+
+return(
+    <>
+    {items.length ? (
+        <div className="item-two">
+        {items.map((item)=>(
+            <div className="test" key={item.id}>{item.title}</div>
+        ))}
+    </div>
+    ): <p> noItems </p>}
+    </>
+)
+// return(
+//     <div className="item-two">
+//         {items.map((item)=>(
+//             <div className="test" key={item.id}>{item.title}</div>
+//         ))}
+//     </div>
+// )
 }
