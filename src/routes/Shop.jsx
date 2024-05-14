@@ -1,4 +1,6 @@
 import  { useLoaderData } from "react-router-dom";
+import { FilterList } from "../components/filterList"
+import { ItemCollection } from "../components/itemCollection";
 
 // itemTwoLoader
 export const ShopLoader = async () => {
@@ -13,6 +15,9 @@ const items = useLoaderData()
 return(
     <>
     {items.length ? (
+        <div>            
+        <FilterList></FilterList>
+        <ItemCollection></ItemCollection>
         <div className="item-two flex flex-wrap justify-center">
         {items.map((item)=>(
             <div key={item.id} className="p-2 bg-slate-200 border-2 border-gray-500 m-2 max-w-48">
@@ -24,6 +29,7 @@ return(
         </div>
         ))}
     </div>
+        </div>
     ): <p> noItems </p>}
     </>
 )
