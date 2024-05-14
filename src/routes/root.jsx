@@ -15,7 +15,7 @@ export default function Root(){
                     <li className="p-1"><Link to={"cart"}>cart</Link></li>
                 </ul>
             </div>
-        <div className="details">
+        <div id="details" className="flex justify-center">
             <Outlet></Outlet>
         </div>
         </div>
