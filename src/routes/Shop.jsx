@@ -1,4 +1,4 @@
-import  { useLoaderData } from "react-router-dom";
+import  { useLoaderData,Outlet } from "react-router-dom";
 import { FilterList } from "../components/filterList"
 import { ItemCollection } from "../components/itemCollection";
 
@@ -15,8 +15,9 @@ const items = useLoaderData()
 return(
     <>
     {items.length ? (
-        <div id="shop" className="grid grid-cols-4 p-8 overflow-x-hidden box-content">            
-        <FilterList></FilterList>
+        <div id="shop" className="grid grid-cols-4 p-6">            
+        {/* <Link to={'item-collection'}>ItemCollection</Link> */}
+        <Outlet></Outlet>
         {/* <ItemCollection></ItemCollection> */}
         <div className="item-two flex flex-wrap justify-center col-start-2 col-end-5">
         {items.map((item)=>(
