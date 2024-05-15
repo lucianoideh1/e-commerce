@@ -6,7 +6,6 @@ import Root from './routes/root'
 import ErrorPage from './error-page'
 import Shop, {ShopLoader} from './routes/shop'
 import Index from './routes'
-import { FilterList } from './components/filterList'
 import { ItemCollection } from './components/itemCollection'
 
 const router = createBrowserRouter([
@@ -21,9 +20,8 @@ const router = createBrowserRouter([
       element:<Shop></Shop>,
       loader:ShopLoader,
       children:[
-        {index:true,element:<FilterList></FilterList>},
-        {path:'item-collection',element:<ItemCollection></ItemCollection>}
-      ]
+        {index:true,element:<ItemCollection></ItemCollection>}
+      ],
      }
     ],
   },
