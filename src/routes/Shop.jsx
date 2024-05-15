@@ -15,7 +15,7 @@ const items = useLoaderData()
 return(
     <>
     {items.length ? (
-        <div id="shop" className="grid grid-cols-4 p-8">            
+        <div id="shop" className="grid grid-cols-4 p-8 overflow-x-hidden box-content">            
         <FilterList></FilterList>
         {/* <ItemCollection></ItemCollection> */}
         <div className="item-two flex flex-wrap justify-center col-start-2 col-end-5">
