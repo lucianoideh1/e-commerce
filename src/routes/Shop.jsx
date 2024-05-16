@@ -1,4 +1,4 @@
-import  { useLoaderData,Outlet } from "react-router-dom";
+import  { useLoaderData } from "react-router-dom";
 import { Card } from '../components/card'
 // itemTwoLoader
 export const ShopLoader = async () => {
@@ -13,7 +13,6 @@ return(
     <>
     {items.length ? (
         <div id="shop" className="grid grid-cols-4 p-6">            
-        {/* <Outlet></Outlet> */}
         <div className="item-two flex flex-wrap justify-center col-start-1 col-end-5">
         {items.map((item)=>(
 
