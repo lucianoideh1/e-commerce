@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import { Card } from '../components/card'
 import { useEffect } from "react";
+import { Filter } from "../components/filter";
+import { ItemCollection } from "../components/itemCollection";
 
 // itemTwoLoader
 export const ShopLoader = async () => {
@@ -34,7 +36,11 @@ return(
     //     </div>
     // ): <p> noItems </p>}
     // </>
-    <div>Shop</div>
+    <div>
+        Shop
+        <Filter></Filter>
+        <ItemCollection></ItemCollection>
+    </div>
 )
 
 }
