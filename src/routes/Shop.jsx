@@ -21,6 +21,14 @@ export default function Shop(){
         thing()
     },[items])
 
+
+    const item = [{
+        title:'title',
+        category:'category',
+        price:110,
+        image:'url'
+    },]
+
 return(
     // <>
     // {items.length ? (
@@ -39,7 +47,7 @@ return(
     <div>
         Shop
         <Filter></Filter>
-        <ItemCollection></ItemCollection>
+        <ItemCollection item={item}></ItemCollection>
     </div>
 )
 

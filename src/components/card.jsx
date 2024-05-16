@@ -1,11 +1,6 @@
 
 export const Card = ({item}) => {
-    // const item = {
-    //     title:'title',
-    //     category:'category',
-    //     price:110,
-    //     image:'url'
-    // }
+   
 
   return (
     <div key={item.id} className="p-2 bg-slate-200 border-2 border-gray-500 m-2 max-w-48">
