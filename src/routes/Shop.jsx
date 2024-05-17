@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { Card } from '../components/card'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Filter } from "../components/filter";
 import { ItemCollection } from "../components/itemCollection";
 
@@ -13,6 +13,9 @@ export const ShopLoader = async () => {
 export default function Shop(){
     const items = useLoaderData()
 
+    const [state, setState] = useState(null)
+    const [loading,setLoading] = useState(true)
+    const [error,setError] = useState(null)
 
     useEffect(() => {
         function thing(){
@@ -64,7 +67,7 @@ return(
     // </>
     <div id='shop' className="grid grid-cols-6">
         <Filter></Filter>
-        <ItemCollection item={item}></ItemCollection>
+        <ItemCollection item={item} state={state}></ItemCollection>
     </div>
 )
 
