@@ -1,5 +1,4 @@
-import { useLoaderData } from "react-router-dom";
-import { Card } from '../components/card'
+import { Outlet, useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Filter } from "../components/filter";
 import { ItemCollection } from "../components/itemCollection";
@@ -31,6 +30,7 @@ export default function Shop(){
 return(
 
     <div id='shop' className="grid grid-cols-6">
+        {/* <Outlet></Outlet> */}
         <Filter></Filter>
         {loading ? null: (<ItemCollection state={state} loading={loading}></ItemCollection>)}
     </div>

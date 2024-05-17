@@ -6,6 +6,7 @@ import Root from './routes/root'
 import ErrorPage from './error-page'
 import Shop, {ShopLoader} from './routes/shop'
 import Index from './routes'
+import { Product } from './routes/product'
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,10 @@ const router = createBrowserRouter([
       path:'/shop',
       element:<Shop></Shop>,
       loader:ShopLoader,
-      errorElement:<ErrorPage></ErrorPage>
+      errorElement:<ErrorPage></ErrorPage>,
+      children:[
+        {path:'product',element:<Product></Product>}
+      ]
      }
     ],
   },
