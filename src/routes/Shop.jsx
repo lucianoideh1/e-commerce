@@ -24,7 +24,25 @@ export default function Shop(){
 
     const item = [{
         title:'title',
-        category:'category',
+        category:'men',
+        price:110,
+        image:'url'
+    },
+    {
+        title:'title',
+        category:'women',
+        price:110,
+        image:'url'
+    },
+    {
+        title:'title',
+        category:'jewelery',
+        price:110,
+        image:'url'
+    },
+    {
+        title:'title',
+        category:'electronics',
         price:110,
         image:'url'
     },]
@@ -44,7 +62,7 @@ return(
     //     </div>
     // ): <p> noItems </p>}
     // </>
-    <div>
+    <div id='shop' className="flex">
         Shop
         <Filter></Filter>
         <ItemCollection item={item}></ItemCollection>
