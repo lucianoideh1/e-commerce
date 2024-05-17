@@ -15,59 +15,24 @@ export default function Shop(){
 
     const [state, setState] = useState(null)
     const [loading,setLoading] = useState(true)
-    const [error,setError] = useState(null)
+    // const [error,setError] = useState(null)
 
     useEffect(() => {
-        function thing(){
+
+         function thing(){
+            setState(items)
+            setLoading(false)
             console.log('items have been loaded!')
         }
         thing()
     },[items])
 
 
-    const item = [{
-        title:'title',
-        category:'men',
-        price:110,
-        image:'url'
-    },
-    {
-        title:'title',
-        category:'women',
-        price:110,
-        image:'url'
-    },
-    {
-        title:'title',
-        category:'jewelery',
-        price:110,
-        image:'url'
-    },
-    {
-        title:'title',
-        category:'electronics',
-        price:110,
-        image:'url'
-    },]
-
 return(
-    // <>
-    // {items.length ? (
-    //     <div id="shop" className="grid grid-cols-4 p-6">            
-    //     <div className="item-two flex flex-wrap justify-center col-start-1 col-end-5">
-    //     {items.map((item)=>(
 
-    //     <div key={item.id}>
-    //         <Card item={item} ></Card>
-    //     </div>
-    //     ))}
-    // </div>
-    //     </div>
-    // ): <p> noItems </p>}
-    // </>
     <div id='shop' className="grid grid-cols-6">
         <Filter></Filter>
-        <ItemCollection item={item} state={state}></ItemCollection>
+        {loading ? null: (<ItemCollection state={state} loading={loading}></ItemCollection>)}
     </div>
 )
 
