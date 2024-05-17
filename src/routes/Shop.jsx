@@ -62,7 +62,7 @@ return(
     //     </div>
     // ): <p> noItems </p>}
     // </>
-    <div id='shop' className="flex">
+    <div id='shop' className="grid grid-cols-6">
         <Filter></Filter>
         <ItemCollection item={item}></ItemCollection>
     </div>

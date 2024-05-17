@@ -1,11 +1,11 @@
 // import { Card } from "./card"
 export const ItemCollection = ({item})  => {
     return(
-        <div id="collection" className="p-2 bg-slate-200 border-2 border-gray-500 m-2  text-lg font-semibold flex flex-col items-center">
+        <div id="collection" className="col-start-2 col-end-7 p-2 bg-slate-200 shadow-md shadow-slate-600 m-2  text-lg font-semibold flex flex-col items-center">
             <h3>ItemCollection</h3>
-            <ul className="flex flex-wrap">
+            <ul className="grid grid-cols-10 min-w-full gap-4">
             {item.map((i) => (
-            <li key={i.title} className="p-2 bg-slate-400 border-2 border-gray-500 m-2 max-w-48"> 
+            <li key={i.title} className="rounded-sm p-2 bg-slate-300 shadow-md shadow-slate-400  m-2 max-w-48"> 
             <div >
             <p className="font-bold text-xl">{i.title}</p>
             <p className="text-gray-700 text-base">{i.category}</p>
