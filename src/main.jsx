@@ -20,9 +20,11 @@ const router = createBrowserRouter([
       element:<Shop></Shop>,
       loader:ShopLoader,
       errorElement:<ErrorPage></ErrorPage>,
-      children:[
-        {path:'product',element:<Product></Product>}
-      ]
+     }
+     ,
+     {
+      path:'/products',
+      element:<Product></Product>
      }
     ],
   },

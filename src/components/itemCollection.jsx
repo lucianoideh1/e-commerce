@@ -15,7 +15,7 @@ useEffect(() => {
                     {loading ? null : (
                             state.map((i) => (
                                     <li key={i.title} className="rounded-sm p-2 bg-slate-300 shadow-md shadow-slate-400 max-w-48 max-h-72 overflow-y-hidden hover:scale-105 hover:cursor-pointer hover:shadow-slate-900 transition-all duration-500"> 
-                                <Link to={`/product/${i.id}`}>
+                                <Link to={`/products/${i.id}`}>
                                    <Card props={{image:i.image,price:i.price,category:i.category,title:i.title}}></Card>
                                 </Link>
                                 {/* <div className="flex flex-col leading-3">
