@@ -1,12 +1,19 @@
-export const Product = (req) => {
-    console.log(req)
+import { useParams } from "react-router-dom"
 
-    const props = {
+export const Product = () => {
+
+  const params  = useParams()
+  const productId = params.productId
+
+  console.log(productId)
+   
+  const props = {
         image:'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg',
         price:110,
         category:'electronics',
         title:'first timer'
     }
+    
     return(
         <div id="product" className="shadow-md p-2 m-auto grid grid-cols-2 grid-rows-2 gap-4">
             <section className="product-img p-2 row-start-1 row-end-3">    
