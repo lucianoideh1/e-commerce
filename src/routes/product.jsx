@@ -1,3 +1,4 @@
+import { useOutletContext } from "react-router-dom"
 import { useParams, useLoaderData } from "react-router-dom"
 //loader for product
 export const productLoader = async ({params}) => {
@@ -13,6 +14,8 @@ export default function Product() {
   const product = useLoaderData()
   console.log(`product id is:${productId}`)
      
+  const context = useOutletContext()
+  console.log(context)
     return(
         <div id="product" className="shadow-md p-2 m-auto grid grid-cols-2 grid-rows-2 gap-4">
             <section className="product-img p-2 row-start-1 row-end-3">    
