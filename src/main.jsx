@@ -6,7 +6,7 @@ import Root from './routes/root'
 import ErrorPage from './error-page'
 import Shop, {ShopLoader} from './routes/shop'
 import Index from './routes'
-import { Product } from './routes/product'
+import Product, { productLoader} from './routes/product'
 
 const router = createBrowserRouter([
   {
@@ -24,7 +24,8 @@ const router = createBrowserRouter([
      ,
      {
       path:'/products/:productId',
-      element:<Product></Product>
+      element:<Product></Product>,
+      loader:productLoader,
      }
     ],
   },
