@@ -18,18 +18,10 @@ useEffect(() => {
                                 <Link to={`/products/${i.id}`}>
                                    <Card props={{image:i.image,price:i.price,category:i.category,title:i.title}}></Card>
                                 </Link>
-                                {/* <div className="flex flex-col leading-3">
-                                    <img src={i.image} alt="item" className='object-cover max-h-40' />
-                                    <p className="font-medium text-lg">${i.price}</p>
-                                    <p className="text-gray-700 text-base">{i.category}</p>
-                                    <p className="font-bold text-base">{i.title}</p>
-                                </div> */}
                              </li>))
                     )}
                 </ul>
             </div>
     )
-   
-   
 }
 
