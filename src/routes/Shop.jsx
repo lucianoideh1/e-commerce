@@ -29,10 +29,10 @@ export default function Shop(){
 
 return(
 
-    <div id='shop' className="grid grid-cols-6">
+    <section id='shop' className="grid grid-cols-6">
         <Filter></Filter>
         {loading ? null: (<ItemCollection state={state} loading={loading}></ItemCollection>)}
-    </div>
+    </section>
 )
 
 }

@@ -1,5 +1,4 @@
 import { useParams, useLoaderData } from "react-router-dom"
-
 //loader for product
 export const productLoader = async ({params}) => {
     const { productId } = params
@@ -9,7 +8,6 @@ export const productLoader = async ({params}) => {
 }
 
 export default function Product() {
-
   const params  = useParams()
   const productId = params.productId
   const product = useLoaderData()

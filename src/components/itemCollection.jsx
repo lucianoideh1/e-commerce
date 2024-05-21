@@ -10,7 +10,7 @@ useEffect(() => {
     alert()
 },[state, loading])
     return(
-        <div id="collection" className="col-start-2 col-end-7 p-2  shadow-slate-600 m-2  text-lg font-semibold flex flex-col items-center">
+        <section id="item-collection" className="col-start-2 col-end-7 p-2  shadow-slate-600 m-2  text-lg font-semibold flex flex-col items-center">
                 <ul className="grid grid-cols-6 gap-4  justify-start min-w-full">
                     {loading ? null : (
                             state.map((i) => (
@@ -21,7 +21,7 @@ useEffect(() => {
                              </li>))
                     )}
                 </ul>
-            </div>
+            </section>
     )
 }
 

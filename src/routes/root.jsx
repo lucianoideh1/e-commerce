@@ -4,8 +4,8 @@ import { Outlet,Link} from "react-router-dom";
 export default function Root(){
 const [cart, setCart] = useState(0)
     return(
-        <div id='index-site' className="w-screen">
-            <div id='nav-bar'className="flex gap-6 items-center justify-center w-full p-2 bg-gray-200	 shadow-sm shadow-slate-600">
+        <section id='index-site' className="w-screen">
+            <section id='nav-bar'className="flex gap-6 items-center justify-center w-full p-2 bg-gray-200	 shadow-sm shadow-slate-600">
                 <h1 className="text-2xl text-gray-900 font-extrabold ">title</h1>
                 <ul className="flex gap-1 text-l font-medium">
                     <li className="p-1"> <Link to={"/"}>home</Link></li>
@@ -14,10 +14,10 @@ const [cart, setCart] = useState(0)
                     <li className="p-1"><Link to={"categories"}>categories</Link></li>
                     <li className="p-1"><Link to={"cart"}>cart({cart})</Link></li>
                 </ul>
-            </div>
-        <div id="details" className="flex justify-center">
+            </section>
+            <main id="details" className="flex justify-center">
             <Outlet></Outlet>
-        </div>
-        </div>
+            </main>
+        </section>
     )
 }
