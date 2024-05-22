@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router-dom"
 import { useParams, useLoaderData } from "react-router-dom"
+import { useState } from 'react'
 //loader for product
 export const productLoader = async ({params}) => {
     const { productId } = params
@@ -13,7 +14,15 @@ export default function Product() {
   const productId = params.productId
   const product = useLoaderData()
   console.log(`product id is:${productId}`)
-     
+  const [counter,setCounter] = useState(1)
+
+  const onSubtract = () => {
+    setCounter(counter - 1)
+  }
+    
+  const onAddition = () => {
+    setCounter(counter + 1)
+  }
   const context = useOutletContext()
   console.log(context)
     return(
@@ -27,7 +36,7 @@ export default function Product() {
             <p className="font-bold text-lg text-slate-900">{product.title}</p>
             
             </section>
-            <form action="" className="p-4 flex flex-col gap-4">
+            <form onSubmit={( e ) => { e.preventDefault()}} className="p-4 flex flex-col gap-4">
             <ul className="flex gap-6 min-w-full p-2">
                 <li>xs</li>
                 <li>s</li>
@@ -36,9 +45,9 @@ export default function Product() {
                 <li>xl</li>
             </ul>
                 <div className="quantity flex justify-around py-2 border-2 border-slate-800 text-lg font-semibold">
-                    <button>-</button>
-                    <span>1</span>
-                    <button>+</button>
+                    <button onClick={onSubtract}>-</button>
+                    <span>{counter}</span>
+                    <button onClick={onAddition}>+</button>
                     </div>
                 <button className="bg-gray-900 text-slate-200 p-2 px-4 min-w-full">Add to card</button>
             </form>
