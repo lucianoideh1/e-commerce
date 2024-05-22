@@ -1,8 +1,6 @@
 import { useOutletContext } from "react-router-dom"
 import { useParams, useLoaderData } from "react-router-dom"
 import { useState } from 'react'
-//loader for product
-
 
 export default function Product() {
   const params  = useParams()
@@ -18,8 +16,17 @@ export default function Product() {
   const onAddition = () => {
     setCounter(counter + 1)
   }
+
   const context = useOutletContext()
+  const {cart,setCart}  = context
   console.log(context)
+  
+  const handleAddToCart = () => {
+    setCart([...cart,
+        {product_name:product.name,
+        product_price:product.price,
+        quantity:counter}])
+  }
     return(
         <div id="product" className="shadow-md p-2 m-auto grid grid-cols-2 grid-rows-2 gap-4">
             <section className="product-img p-2 row-start-1 row-end-3">    
@@ -44,7 +51,7 @@ export default function Product() {
                     <span>{counter}</span>
                     <button onClick={onAddition}>+</button>
                     </div>
-                <button className="bg-gray-900 text-slate-200 p-2 px-4 min-w-full">Add to card</button>
+                <button className="bg-gray-900 text-slate-200 p-2 px-4 min-w-full" onClick={handleAddToCart}>Add to card</button>
             </form>
         </div>
     )

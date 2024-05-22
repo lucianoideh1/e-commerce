@@ -2,8 +2,7 @@ import { useState } from "react";
 import { Outlet,Link} from "react-router-dom";
 
 export default function Root(){
-const [cart, setCart] = useState(0)
-const [counter,setCounter] = useState(0)
+const [cart, setCart] = useState([])
     return(
         <section id='index-site' className="w-screen">
             <section id='nav-bar'className="flex gap-6 items-center justify-center w-full p-2 bg-gray-200	 shadow-sm shadow-slate-600">
@@ -13,11 +12,11 @@ const [counter,setCounter] = useState(0)
                     <li className="p-1"> <Link to={"about"}>about</Link></li>
                     <li className="p-1"><Link to={"/shop"}>shop</Link></li>
                     <li className="p-1"><Link to={"categories"}>categories</Link></li>
-                    <li className="p-1"><Link to={"cart"}>cart({cart})</Link></li>
+                    <li className="p-1"><Link to={"cart"}>cart({cart.length})</Link></li>
                 </ul>
             </section>
             <main id="details" className="flex justify-center">
-            <Outlet context={{counter,setCounter}}></Outlet>
+            <Outlet context={{cart,setCart}}></Outlet>
             </main>
         </section>
     )
