@@ -1,4 +1,4 @@
-import { Outlet, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Filter } from "../components/filter";
 import { ItemCollection } from "../components/itemCollection";

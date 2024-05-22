@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import {useEffect} from 'react'
 import { Card } from './card'
+import PropTypes from 'prop-types';
+
 export const ItemCollection = ({ state,loading})  => {
     
 useEffect(() => {
@@ -23,5 +25,10 @@ useEffect(() => {
                 </ul>
             </section>
     )
+
+}
+ItemCollection.propTypes = {
+    state: PropTypes.null || PropTypes.object,
+    loading: PropTypes.bool
 }
 
