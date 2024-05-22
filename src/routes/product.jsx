@@ -23,7 +23,7 @@ export default function Product() {
   
   const handleAddToCart = () => {
     setCart([...cart,
-        {product_name:product.name,
+        {product_name:product.title,
         product_price:product.price,
         quantity:counter}])
   }

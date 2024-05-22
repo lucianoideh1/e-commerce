@@ -8,6 +8,7 @@ import Shop, {ShopLoader} from './routes/shop'
 import Index from './routes'
 import Product  from './routes/product'
 import productLoader from './utils/productLoader'
+import { Cart } from './routes/cart'
 
 const router = createBrowserRouter([
   {
@@ -21,13 +22,16 @@ const router = createBrowserRouter([
       element:<Shop></Shop>,
       loader:ShopLoader,
       errorElement:<ErrorPage></ErrorPage>,
-     }
-     ,
+     },
      {
       path:'/products/:productId',
       element:<Product></Product>,
       loader:productLoader,
-     }
+     },
+     {
+      path:'/cart',
+      element:<Cart></Cart>
+     },
     ],
   },
 ])
