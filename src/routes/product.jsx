@@ -2,12 +2,7 @@ import { useOutletContext } from "react-router-dom"
 import { useParams, useLoaderData } from "react-router-dom"
 import { useState } from 'react'
 //loader for product
-export const productLoader = async ({params}) => {
-    const { productId } = params
-    const res = await fetch(`https://fakestoreapi.com/products/${productId}`)
-    console.log(res)
-    return res.json()
-}
+
 
 export default function Product() {
   const params  = useParams()
