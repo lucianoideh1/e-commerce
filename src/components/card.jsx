@@ -1,4 +1,6 @@
 import { useEffect } from "react"
+import PropTypes from 'prop-types'
+
 export const Card = ({props}) => {
 
   useEffect(() => {
@@ -18,3 +20,11 @@ export const Card = ({props}) => {
   )
 }
 
+
+Card.propTypes = {
+  props: PropTypes.object,
+  image: PropTypes.string,
+  title: PropTypes.string,
+  price: PropTypes.number,
+  category: PropTypes.string
+}
