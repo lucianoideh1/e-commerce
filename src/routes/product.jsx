@@ -47,7 +47,7 @@ export default function Product() {
                 <li>xl</li>
             </ul>
                 <div className="quantity flex justify-around py-2 border-2 border-slate-800 text-lg font-semibold">
-                    <button onClick={onSubtract}>-</button>
+                    {counter > 1 && <button onClick={onSubtract}>-</button>}
                     <span>{counter}</span>
                     <button onClick={onAddition}>+</button>
                     </div>
