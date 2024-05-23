@@ -12,10 +12,12 @@ export const Cart = () => {
     else if(cart.length > 0){
         return(
             <section id="cart_products">
+                <ul>
            {cart.map((i) => (
-           <div key={i.product_name}>
+           <li key={i.product_name} className="border-2 border-gray-800 m-2 py-2 px-4 rounded-md">
             {i.product_name} - x{i.quantity} - total: ${(i.quantity * i.product_price)}
-            </div>))} 
+            </li>))} 
+            </ul>
             </section>
         )
     }
