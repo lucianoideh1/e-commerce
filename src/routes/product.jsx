@@ -46,12 +46,12 @@ export default function Product() {
                 <li>l</li>
                 <li>xl</li>
             </ul>
-                <div className="quantity flex justify-around py-2 border-2 border-slate-800 text-lg font-semibold">
-                    {counter > 1 && <button onClick={onSubtract}>-</button>}
-                    <span>{counter}</span>
-                    <button onClick={onAddition}>+</button>
+                <div className="quantity flex  border-2 border-slate-800 text-lg font-semibold">
+                    {counter > 1 && <button onClick={onSubtract} className="hover:bg-gray-200 py-2 px-4 flex-grow transition-colors duration-300">-</button>}
+                    <span className=" py-2 px-4 flex-grow text-center">{counter}</span>
+                    <button onClick={onAddition} className="hover:bg-gray-200 py-2 px-4 flex-grow transition-colors duration-300">+</button>
                     </div>
-                <button className="bg-gray-900 text-slate-200 p-2 px-4 min-w-full" onClick={handleAddToCart}>Add to card</button>
+                <button className="bg-gray-900 text-slate-200 p-2 px-4 min-w-full " onClick={handleAddToCart}>Add to card</button>
             </form>
         </div>
     )
