@@ -1,10 +1,12 @@
 import { useOutletContext } from "react-router-dom"
 
 export const Cart = () => {
+    console.log('rendered cart ')
     const context = useOutletContext()
     const {cart,setCart} = context
     console.log(context)
     console.log(cart)
+
 
     function onPayout(){
         setCart([])
@@ -18,7 +20,7 @@ export const Cart = () => {
        let total = 0
 
        for(let i = 0; i < cart.length;i++){
-        total += cart[i].product_price
+        total += Math.trunc(cart[i].quantity * cart[i].product_price)
        }
 
        

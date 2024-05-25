@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 
 export const ItemCollection = ({ state,loading})  => {
     
-useEffect(() => {
-    function alert(){
-        console.log('props setted')
-    }
-    alert()
-},[state, loading])
+// useEffect(() => {
+//     function alert(){
+//         console.log('props setted')
+//     }
+//     alert()
+// },[state, loading])
     return(
         <section id="item-collection" className="col-start-2 col-end-7 p-2  shadow-slate-600 m-2  text-lg font-semibold flex flex-col items-center">
                 <ul className="grid grid-cols-6 gap-4  justify-start min-w-full">

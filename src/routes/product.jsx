@@ -6,8 +6,8 @@ export default function Product() {
   const params  = useParams()
   const productId = params.productId
   const product = useLoaderData()
-  console.log(`product id is:${productId}`)
-  console.log(`product is:${product}`)
+  // console.log(`product id is:${productId}`)
+  // console.log(`product is:${product}`)
   const [counter,setCounter] = useState(1)
 
   const onSubtract = () => {
