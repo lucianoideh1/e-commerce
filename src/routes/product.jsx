@@ -26,7 +26,7 @@ export default function Product() {
 
     setCart((prevItems) => {
       //check if item already exist on array 
-      const itemIndex = prevItems.findIndex((item) => item.id === newItem.id);
+      const itemIndex = prevItems.findIndex((item) => item.id === productId);
       if(itemIndex !== -1){
         //if already exist then update quantity
         const updatedItems = [...prevItems]
@@ -34,7 +34,7 @@ export default function Product() {
         return updatedItems
       } else {
         //if doesnt exist then just add to arr 
-        return [...prevItems, {product_name:newItem.title,product_price:newItem.price,quantity:counter}]
+        return [...prevItems, {product_name:newItem.title,product_price:newItem.price,quantity:counter,id:productId}]
       }
     })
     // setCart([...cart,
