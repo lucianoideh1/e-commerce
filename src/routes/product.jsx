@@ -7,6 +7,7 @@ export default function Product() {
   const productId = params.productId
   const product = useLoaderData()
   console.log(`product id is:${productId}`)
+  console.log(`product is:${product}`)
   const [counter,setCounter] = useState(1)
 
   const onSubtract = () => {
@@ -18,14 +19,29 @@ export default function Product() {
   }
 
   const context = useOutletContext()
-  const {cart,setCart}  = context
+  const {cart, setCart}  = context
   console.log(context)
   
-  const handleAddToCart = () => {
-    setCart([...cart,
-        {product_name:product.title,
-        product_price:product.price,
-        quantity:counter}])
+  const handleAddToCart = (newItem) => {
+
+    setCart((prevItems) => {
+      //check if item already exist on array 
+      const itemIndex = prevItems.findIndex((item) => item.id === newItem.id);
+      if(itemIndex !== -1){
+        //if already exist then update quantity
+        const updatedItems = [...prevItems]
+        updatedItems[itemIndex].quantity += counter
+        return updatedItems
+      } else {
+        //if doesnt exist then just add to arr 
+        return [...prevItems, {product_name:newItem.title,product_price:newItem.price,quantity:counter}]
+      }
+    })
+    // setCart([...cart,
+    //     {product_name:product.title,
+    //     product_price:product.price,
+    //     quantity:counter}])
+
   }
     return(
         <div id="product" className="shadow-md p-2 m-auto grid grid-cols-2 grid-rows-2 gap-4">
@@ -51,7 +67,7 @@ export default function Product() {
                     <span className=" py-2 px-4 flex-grow text-center">{counter}</span>
                     <button onClick={onAddition} className="hover:bg-gray-200 py-2 px-4 flex-grow transition-colors duration-300">+</button>
                     </div>
-                <button className="bg-gray-900 text-slate-200 p-2 px-4 min-w-full " onClick={handleAddToCart}>Add to card</button>
+                <button className="bg-gray-900 text-slate-200 p-2 px-4 min-w-full " onClick={() => handleAddToCart(product)}>Add to card</button>
             </form>
         </div>
     )
