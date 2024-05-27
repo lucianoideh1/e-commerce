@@ -13,7 +13,7 @@ export const Cart = () => {
        }
 
     if(cart.length === 0){
-        return(<h1 className="text-6xl font-bold">Cart is currently empty</h1>)
+        return(<h1 className="text-2xl md:text-4xl lg:text-6xl font-bold">Cart is currently empty</h1>)
     }
     else if(cart.length > 0){
         
@@ -36,7 +36,7 @@ export const Cart = () => {
         ))} 
             </ul>
             </section>
-            <section id="payout" className="flex flex-col gap-4 font-semibold text-2xl">
+            <section id="payout" className="p-4 flex flex-col gap-4 font-semibold text-2xl">
                 <p className="flex items-center justify-center">total: ${total}</p>
                 <button onClick={onPayout} 
                 className="bg-slate-900 text-slate-100 py-2 px-4 font-medium text-2xl rounded-lg flex items-center uppercase justify-center hover:bg-slate-700 transition-colors duration-300"
