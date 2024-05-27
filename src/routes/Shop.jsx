@@ -29,7 +29,7 @@ export default function Shop(){
 
 return(
 
-    <section id='shop' className=" lg:grid-cols-6">
+    <section id='shop' className="min-w-full">
         <Filter></Filter>
         {loading ? null: (<ItemCollection state={state} loading={loading}></ItemCollection>)}
     </section>
