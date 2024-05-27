@@ -11,8 +11,7 @@ const [cart, setCart] = useState([])
                     <li className="p-1"> <Link to={"/"}>home</Link></li>
                     <li className="p-1"> <Link to={"about"}>about</Link></li>
                     <li className="p-1"><Link to={"/shop"}>shop</Link></li>
-                    <li className="p-1"><Link to={"categories"}>categories</Link></li>
-                    <li className="p-1"><Link to={"cart"}>cart({cart.length})</Link></li>
+                    <li className="p-1"><Link to={"/cart"}>cart({cart.length})</Link></li>
                 </ul>
             </section>
             <main id="details" className="flex justify-center">

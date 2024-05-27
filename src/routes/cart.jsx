@@ -9,6 +9,7 @@ export const Cart = () => {
 
 
     function onPayout(){
+        alert('thanks for buying in the shop')
         setCart([])
        }
 
@@ -27,11 +28,11 @@ export const Cart = () => {
         return(
             <section id="cart">
             <section id="cart_products" className="mb-8">
-                <ul>
+                <ul className="">
            {cart.map((i) => (
 
-           <li key={i.product_name} className="border-2 border-gray-800 m-2 py-2 px-4 rounded-md">
-            {i.product_name} - x{i.quantity} - total: ${(i.quantity * i.product_price)}
+           <li key={i.product_name} className="flex border-2 border-gray-800 m-2 py-2 px-4 rounded-md">
+          <span className="mr-auto">{i.product_name}</span>  x{i.quantity} - total: ${(i.quantity * i.product_price)}
             </li>
         ))} 
             </ul>

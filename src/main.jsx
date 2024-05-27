@@ -9,6 +9,7 @@ import Index from './routes'
 import Product  from './routes/product'
 import productLoader from './utils/productLoader'
 import { Cart } from './routes/cart'
+import { About } from './routes/about'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
     children: [
       {index:true,element:<Index></Index>},
      {
+      path:'/about',
+      element:<About></About>,
+     }
+      ,{
       path:'/shop',
       element:<Shop></Shop>,
       loader:ShopLoader,
