@@ -15,11 +15,11 @@ const [cart, setCart] = useState([])
                 </ul>
             </section>
             <section id="mobile-nav-bar" className="fixed lg:hidden bottom-0 min-w-full">
-                <ul className=" flex justify-around bg-cyan-600">
-                    <li className="p-4 "><Link className=" text-slate-100 hover:text-gray-800" to={'/about'}>Home</Link></li>
-                    <li className="p-4 "><Link className=" text-slate-100 hover:text-gray-800" to={'/about'}>About</Link></li>
-                    <li className="p-4"><Link className=" text-slate-100 hover:text-gray-800" to={'/shop'}>Shop</Link></li>
-                    <li className="p-4"><Link className=" text-slate-100 hover:text-gray-800" to={'/cart'}>Cart({cart.length})</Link></li>
+                <ul className=" flex justify-around bg-slate-900">
+                    <li className="p-4 "><Link className=" text-slate-100 hover:text-gray-300 " to={'/about'}>Home</Link></li>
+                    <li className="p-4 "><Link className=" text-slate-100 hover:text-gray-300" to={'/about'}>About</Link></li>
+                    <li className="p-4"><Link className=" text-slate-100 hover:text-gray-300" to={'/shop'}>Shop</Link></li>
+                    <li className="p-4"><Link className=" text-slate-100 hover:text-gray-300" to={'/cart'}>Cart({cart.length})</Link></li>
                 </ul>
             </section>
             <main id="details" className="flex justify-center">
