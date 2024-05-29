@@ -6,7 +6,7 @@ const [cart, setCart] = useState([])
     return(
         <section id='index-site' className="w-screen">
             <section id='nav-bar'className="hidden lg:flex gap-6 items-center justify-center w-full p-2 bg-gray-200	 shadow-sm shadow-slate-600">
-                <h1 className=" text-gray-900 font-extrabold ">title</h1>
+                <h1 className=" text-gray-900 font-extrabold ">The Shop</h1>
                 <ul className="flex gap-1 text-l font-medium">
                     <li className="p-1"> <Link to={"/"}>home</Link></li>
                     <li className="p-1"> <Link to={"about"}>about</Link></li>
