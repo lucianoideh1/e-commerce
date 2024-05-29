@@ -14,7 +14,7 @@ export const Cart = () => {
        }
 
     if(cart.length === 0){
-        return(<h1 className="text-2xl md:text-4xl lg:text-6xl font-bold">Cart is currently empty</h1>)
+        return(<h1 className="text-2xl md:text-4xl lg:text-6xl font-bold bg-gray-900 text-gray-100 p-2 m-4">Your cart is currently empty</h1>)
     }
     else if(cart.length > 0){
         
