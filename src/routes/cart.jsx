@@ -1,12 +1,20 @@
 import { useOutletContext } from "react-router-dom"
+import { useMemo } from 'react'
 
 export const Cart = () => {
-    console.log('rendered cart ')
+    // console.log('rendered cart ')
     const context = useOutletContext()
     const {cart,setCart} = context
-    console.log(context)
-    console.log(cart)
+    // console.log(context)
+    // console.log(cart)
 
+
+    const totalPrice = useMemo(() => {
+        return cart.reduce(
+            (total, product) => total +  product.product_price * product.quantity, 0
+        )
+    },[cart])
+    
 
     function onPayout(){
         alert('thanks for buying in the shop')
@@ -17,14 +25,7 @@ export const Cart = () => {
         return(<h1 className="text-2xl md:text-4xl lg:text-6xl font-bold bg-gray-900 text-gray-100 p-2 m-4">Your cart is currently empty</h1>)
     }
     else if(cart.length > 0){
-        
-       let total = 0
 
-       for(let i = 0; i < cart.length;i++){
-        total += Math.trunc(cart[i].quantity * cart[i].product_price)
-       }
-
-       
         return(
             <section id="cart">
             <section id="cart_products" className="mb-8">
@@ -38,7 +39,7 @@ export const Cart = () => {
             </ul>
             </section>
             <section id="payout" className="p-4 flex flex-col gap-4 font-semibold text-2xl">
-                <p className="flex items-center justify-center">total: ${total}</p>
+                <p className="flex items-center justify-center">total: ${totalPrice}</p>
                 <button onClick={onPayout} 
                 className="bg-slate-900 text-slate-100 py-2 px-4 font-medium text-2xl rounded-lg flex items-center uppercase justify-center hover:bg-slate-700 transition-colors duration-300"
                 >payout</button>
